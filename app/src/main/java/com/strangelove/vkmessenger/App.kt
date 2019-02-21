@@ -5,6 +5,7 @@ import android.app.Application
 import android.app.Service
 import com.strangelove.vkmessenger.di.ContextModule
 import com.strangelove.vkmessenger.di.DaggerAppComponent
+import com.vk.api.sdk.VK
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
@@ -34,5 +35,7 @@ class App : Application(), HasActivityInjector, HasServiceInjector {
             .contextModule(ContextModule(this))
             .build()
             .inject(this)
+
+        VK.initialize(this)
     }
 }
