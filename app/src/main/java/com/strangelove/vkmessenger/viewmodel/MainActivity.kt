@@ -22,7 +22,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        VK.login(this, listOf(VKScope.MESSAGES, VKScope.FRIENDS, VKScope.NOTIFICATIONS))
+        //VK.login(this, listOf(VKScope.MESSAGES, VKScope.FRIENDS, VKScope.NOTIFICATIONS))
+        viewModel.testExe()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
