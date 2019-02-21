@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (!VK.onActivityResult(requestCode, resultCode, data!!, object : VKAuthCallback {
                 override fun onLogin(token: VKAccessToken) {
-                    val i = 0
+                    viewModel.saveToken(token.accessToken)
                 }
 
                 override fun onLoginFailed(errorCode: Int) {

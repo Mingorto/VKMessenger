@@ -2,9 +2,9 @@ package com.strangelove.vkmessenger.di
 
 import com.google.gson.Gson
 import com.strangelove.vkmessenger.Const
-import com.strangelove.vkmessenger.model.NetworkInteractor
-import com.strangelove.vkmessenger.model.NetworkInteractorImplementation
-import com.strangelove.vkmessenger.model.NetworkService
+import com.strangelove.vkmessenger.model.network.NetworkInteractor
+import com.strangelove.vkmessenger.model.network.NetworkInteractorImplementation
+import com.strangelove.vkmessenger.model.network.NetworkService
 import dagger.Module
 import dagger.Provides
 import io.reactivex.schedulers.Schedulers

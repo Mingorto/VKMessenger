@@ -1,13 +1,15 @@
 package com.strangelove.vkmessenger.viewmodel
 
-import com.strangelove.vkmessenger.model.NetworkInteractor
+import com.strangelove.vkmessenger.Const
+import com.strangelove.vkmessenger.model.network.NetworkInteractor
 import com.strangelove.vkmessenger.model.dao.Repo
+import com.strangelove.vkmessenger.model.data.StorageUtil
 import io.reactivex.SingleObserver
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 
-class MainViewModel(private val networkInteractor: NetworkInteractor): BaseViewModel() {
+class MainViewModel(private val networkInteractor: NetworkInteractor, private val storageUtil: StorageUtil): BaseViewModel() {
     fun testExe() {
         networkInteractor.listRepos("mingorto")
             .subscribeOn(Schedulers.io())
@@ -25,5 +27,9 @@ class MainViewModel(private val networkInteractor: NetworkInteractor): BaseViewM
 
                 }
             })
+    }
+
+    fun saveToken(token: String) {
+        storageUtil.saveString(Const.AUTH_TOKEN, token)
     }
 }

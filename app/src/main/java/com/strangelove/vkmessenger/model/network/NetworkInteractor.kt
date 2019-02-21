@@ -1,4 +1,4 @@
-package com.strangelove.vkmessenger.model
+package com.strangelove.vkmessenger.model.network
 
 import com.strangelove.vkmessenger.model.dao.Repo
 import io.reactivex.Single
